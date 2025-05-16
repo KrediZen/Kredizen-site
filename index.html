@@ -59,14 +59,17 @@
 
 <section id="contact">
   <h2>Contact / Pré-inscription</h2>
-  <form>
-    <input type="text" placeholder="Nom complet" required>
-    <input type="email" placeholder="Adresse email" required>
-    <input type="text" placeholder="Établissement scolaire">
-    <input type="text" placeholder="Pays d'origine">
-    <textarea placeholder="Pourquoi êtes-vous intéressé ?"></textarea>
-    <button class="cta-button" type="submit">Envoyer</button>
-  </form>
+ <form action="https://formspree.io/f/xwopaydk" method="POST">
+  <input type="hidden" name="_redirect" value="https://kredizen.netlify.app/merci.html">
+
+  <input type="text" name="nom" placeholder="Nom complet" required>
+  <input type="email" name="email" placeholder="Adresse email" required>
+  <input type="text" name="etablissement" placeholder="Établissement scolaire">
+  <input type="text" name="pays" placeholder="Pays d'origine">
+  <textarea name="message" placeholder="Pourquoi êtes-vous intéressé ?"></textarea>
+  
+  <button class="cta-button" type="submit">Envoyer</button>
+</form>
 </section>
 
 <footer>
