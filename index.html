@@ -136,24 +136,27 @@
   <form action="https://formsubmit.co/kredizen.contact@gmail.com" method="POST">
   <input type="hidden" name="_next" value="https://kredizen.netlify.app/merci.html">
   <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_subject" value="Nouvelle pré-inscription reçue sur KrediZen">
+  <input type="hidden" name="_autoresponse" value="Bonjour ! Merci pour votre message. Nous avons bien reçu votre demande. L’équipe KrediZen vous répondra dans les plus brefs délais.">
+  <input type="text" name="honeypot" style="display:none">
 
-    <label>Nom complet</label>
-    <input type="text" name="nom" required>
+  <label>Nom complet</label>
+  <input type="text" name="nom" required>
 
-    <label>Adresse email</label>
-    <input type="email" name="email" required>
+  <label>Adresse email</label>
+  <input type="email" name="email" required>
 
-    <label>Établissement scolaire</label>
-    <input type="text" name="etablissement">
+  <label>Établissement scolaire</label>
+  <input type="text" name="etablissement">
 
-    <label>Pays d'origine</label>
-    <input type="text" name="pays">
+  <label>Pays d'origine</label>
+  <input type="text" name="pays">
 
-    <label>Pourquoi êtes-vous intéressé ?</label>
-    <textarea name="message" rows="4"></textarea>
+  <label>Pourquoi êtes-vous intéressé ?</label>
+  <textarea name="message" rows="4" required></textarea>
 
-    <button class="cta-button" type="submit">Envoyer</button>
-  </form>
+  <button class="cta-button" type="submit">Envoyer</button>
+</form>
 </section>
 
 <footer>
