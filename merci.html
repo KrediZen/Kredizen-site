@@ -2,31 +2,69 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Merci</title>
+  <meta http-equiv="refresh" content="5;url=https://kredizen.netlify.app">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merci – KrediZen</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      background-color: #f4fdfc;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-align: center;
-      padding: 100px;
-      background-color: #f4f4f4;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      max-width: 500px;
+      animation: fadeIn 1s ease-out;
     }
     h1 {
       color: #007F75;
+      margin-bottom: 10px;
     }
-    a {
-      display: inline-block;
+    p {
+      color: #555;
+      font-size: 18px;
+    }
+    .small {
       margin-top: 20px;
-      padding: 10px 20px;
+      font-size: 14px;
+      color: #999;
+    }
+    .btn {
+      margin-top: 25px;
+      padding: 12px 25px;
       background-color: #007F75;
       color: white;
-      text-decoration: none;
+      border: none;
       border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #005f56;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
 <body>
-  <h1>Merci pour votre message !</h1>
-  <p>Nous reviendrons vers vous très bientôt.</p>
-  <a href="/">Retour à l'accueil</a>
+  <div class="card">
+    <h1>Merci pour votre message !</h1>
+    <p>Nous avons bien reçu votre demande. <br>Vous serez redirigé automatiquement vers l'accueil dans quelques secondes.</p>
+    <a href="https://kredizen.netlify.app" class="btn">Retour à l'accueil</a>
+    <p class="small">KrediZen © 2025</p>
+  </div>
 </body>
 </html>
