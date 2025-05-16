@@ -133,19 +133,35 @@
 
 <section id="contact">
   <h2>Contact / Pré-inscription</h2>
-<form action="https://formsubmit.co/kredizen.contact@gmail.com" method="POST">
-  <input type="hidden" name="_next" value="https://kredizen.netlify.app/merci.html">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_subject" value="Nouvelle pré-inscription KrediZen">
-  <input type="hidden" name="_autoresponse" value="<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body style='font-family:Arial,sans-serif;'><h2 style='color:#007F75;'>Bonjour,</h2><p>Nous avons bien reçu votre demande.</p><p>L’équipe <strong>KrediZen</strong> vous répondra sous 24h pour vous accompagner dans votre projet.</p><p style='margin-top:20px;'>Merci pour votre confiance 🙏</p><hr style='margin:30px 0;'><p style='font-size:13px;color:#999;'>Ceci est un message automatique. Merci de ne pas y répondre.</p></body></html>">
-<html>
-<head><meta charset='UTF-8'></head>
-<body style='font-family:Arial,sans-serif;'>
-  <h2 style='color:#007F75;'>Bonjour,</h2>
-  <p>Nous avons bien reçu votre demande.</p>
-  <p>L’équipe <strong>KrediZen</strong> vous répondra sous 24h pour vous accompagner dans votre projet.</p>
-  <p style='margin-top:20px;'>Merci pour votre confiance 🙏</p>
-  <hr style='margin:30px 0;'>
-  <p style='font-size:13px;color:#999;'>Ceci est un message automatique. Merci de ne pas y répondre.</p>
+  <form action="https://formsubmit.co/kredizen.contact@gmail.com" method="POST">
+    <input type="hidden" name="_next" value="https://kredizen.netlify.app/merci.html">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Nouvelle pré-inscription KrediZen">
+    <input type="hidden" name="_autoresponse" value="Bonjour,\n\nNous avons bien reçu votre demande.\n\nL’équipe KrediZen vous répondra sous 24h pour vous accompagner dans votre projet.\n\nMerci pour votre confiance 🙏\n\n---\nCeci est un message automatique. Merci de ne pas y répondre.">
+    <input type="text" name="honeypot" style="display:none">
+
+    <label>Nom complet</label>
+    <input type="text" name="nom" required>
+
+    <label>Adresse email</label>
+    <input type="email" name="email" required>
+
+    <label>Établissement scolaire</label>
+    <input type="text" name="etablissement">
+
+    <label>Pays d'origine</label>
+    <input type="text" name="pays">
+
+    <label>Pourquoi êtes-vous intéressé ?</label>
+    <textarea name="message" rows="4" required></textarea>
+
+    <button class="cta-button" type="submit">Envoyer</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 KrediZen. Tous droits réservés. | kredizen.contact@gmail.com
+</footer>
+
 </body>
-</html>">
+</html>
