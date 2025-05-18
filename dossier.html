@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dépôt de dossier - KrediZen</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4fdfc;
+      padding: 30px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #007F75;
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    .cta-button {
+      margin-top: 30px;
+      background-color: #007F75;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dépôt de dossier - KrediZen</h1>
+  <form action="https://formsubmit.co/kredizen.contact@gmail.com" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_next" value="https://kredizen.netlify.app/merci.html">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Dépôt de dossier complet KrediZen">
+
+    <label>Nom complet</label>
+    <input type="text" name="nom" required>
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Téléphone</label>
+    <input type="tel" name="telephone" required>
+
+    <label>Établissement scolaire</label>
+    <input type="text" name="etablissement">
+
+    <label>Pays d'origine</label>
+    <input type="text" name="pays">
+
+    <label>Type de justificatif d'identité</label>
+    <select name="justificatif">
+      <option value="CNI">Carte Nationale d'Identité</option>
+      <option value="Passeport">Passeport</option>
+      <option value="Titre de séjour">Titre de séjour</option>
+    </select>
+
+    <label>Carte étudiante (PDF, JPG, PNG)</label>
+    <input type="file" name="carte_etudiant" accept=".pdf,.jpg,.jpeg,.png">
+
+    <label>Pièce d'identité (PDF, JPG, PNG)</label>
+    <input type="file" name="piece_identite" accept=".pdf,.jpg,.jpeg,.png">
+
+    <label>RIB (PDF uniquement)</label>
+    <input type="file" name="rib" accept=".pdf">
+
+    <label>Message supplémentaire</label>
+    <textarea name="message" rows="5"></textarea>
+
+    <button class="cta-button" type="submit">Envoyer le dossier</button>
+  </form>
+</body>
+</html>
