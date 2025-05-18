@@ -1,94 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simulateur de Crédit – KrediZen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulateur - KrediZen</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f4fdfc;
-      padding: 40px;
+      margin: 0;
+      padding: 20px;
       text-align: center;
+      color: #333;
     }
-    .container {
-      max-width: 500px;
-      margin: auto;
+    h1 {
+      color: #007F75;
+    }
+    .simulator {
       background: white;
       padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      max-width: 500px;
+      margin: 40px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      text-align: left;
     }
     input, select {
       width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      padding: 10px;
       font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
-    button {
+    .resultat {
+      margin-top: 20px;
+      background: #e0f7f4;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #00655E;
+    }
+    .cta-button {
+      margin-top: 20px;
+      padding: 12px 25px;
       background-color: #007F75;
       color: white;
       border: none;
-      padding: 12px 25px;
-      font-size: 16px;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
-    }
-    button:hover {
-      background-color: #005f56;
-    }
-    .result {
-      margin-top: 20px;
-      background-color: #e8fdf7;
-      padding: 15px;
-      border-radius: 10px;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Simulateur de Crédit</h1>
-    <p>Calculez votre remboursement en quelques clics.</p>
+  <h1>Simulateur de microcrédit</h1>
+  <div class="simulator">
+    <label for="montant">Montant souhaité (€) :</label>
+    <input type="number" id="montant" min="100" max="1500" value="500">
 
-    <label for="amount">Montant du prêt (€)</label>
-    <input type="number" id="amount" placeholder="ex : 500" min="100" max="1500" />
-
-    <label for="duration">Durée (mois)</label>
-    <select id="duration">
+    <label for="duree">Durée de remboursement (en mois) :</label>
+    <select id="duree">
       <option value="3">3 mois</option>
       <option value="6">6 mois</option>
       <option value="9">9 mois</option>
+      <option value="12">12 mois</option>
     </select>
 
-    <button onclick="simulate()">Simuler</button>
-
-    <div class="result" id="result" style="display: none;">
-      <p><strong>Mensualité estimée :</strong> <span id="monthly"></span> €</p>
-      <p><strong>Total remboursé :</strong> <span id="total"></span> €</p>
-      <p><small>Simulation basée sur un taux fixe de 3 %.</small></p>
+    <div class="resultat" id="resultat">
+      Mensualités estimées : -- € / mois
     </div>
+
+    <button class="cta-button" onclick="calculerMensualites()">Simuler</button>
   </div>
 
   <script>
-    function simulate() {
-      const amount = parseFloat(document.getElementById('amount').value);
-      const months = parseInt(document.getElementById('duration').value);
-      const interestRate = 0.03;
+    function calculerMensualites() {
+      const montant = parseFloat(document.getElementById("montant").value);
+      const duree = parseInt(document.getElementById("duree").value);
 
-      if (isNaN(amount) || amount < 100 || amount > 1500) {
-        alert("Veuillez saisir un montant entre 100 € et 1500 €.");
-        return;
-      }
+      const tauxInteret = 0.03; // 3% d'intérêts simulés
+      const montantTotal = montant * (1 + tauxInteret);
+      const mensualite = (montantTotal / duree).toFixed(2);
 
-      const total = amount + (amount * interestRate);
-      const monthly = (total / months).toFixed(2);
-
-      document.getElementById('monthly').innerText = monthly;
-      document.getElementById('total').innerText = total.toFixed(2);
-      document.getElementById('result').style.display = 'block';
+      document.getElementById("resultat").innerText =
+        `Mensualités estimées : ${mensualite} € / mois`;
     }
   </script>
 </body>
